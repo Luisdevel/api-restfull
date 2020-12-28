@@ -31,10 +31,12 @@ class NewsController {
     let news = req.body;
 
     NewsService.update(_id, news)
-      .then((news: any) =>
-      Helper.sendResponse(
-          res, HttpStatus.OK, `${news.title} foi atualizada com sucesso!`,
-        ))
+      .then(news =>
+        Helper.sendResponse(
+        res,
+        HttpStatus.OK,
+        `${news} foi atualizada com sucesso!`,
+      ))
       .catch(error => console.error.bind(console, `Error ${error}`));
   }
 
@@ -43,7 +45,7 @@ class NewsController {
 
     NewsService.delete(_id)
       .then(() =>
-      Helper.sendResponse(res, HttpStatus.OK, 'Noticia deletada com sucesso!')
+        Helper.sendResponse(res, HttpStatus.OK, 'Noticia deletada com sucesso!')
       )
       .catch(error => console.error.bind(console, `Error ${error}`));
   }
