@@ -11,7 +11,7 @@ class NewsService {
   }
 
   create(news) {
-    return NewsRepository.create();
+    return NewsRepository.create(news);
   }
 
   update(_id, news) {

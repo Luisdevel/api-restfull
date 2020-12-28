@@ -9,7 +9,7 @@ class NewsService {
         return newsRespository_1.default.findById(_id); // Retorna o id apenas
     }
     create(news) {
-        return newsRespository_1.default.create();
+        return newsRespository_1.default.create(news);
     }
     update(_id, news) {
         return newsRespository_1.default.findByIdAndUpdate(_id, news);

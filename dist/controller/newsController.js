@@ -18,7 +18,7 @@ class NewsController {
     create(req, res) {
         let vm = req.body;
         newsService_1.default.create(vm)
-            .then(news => helper_1.default.sendResponse(res, HttpStatus.OK, news))
+            .then(news => helper_1.default.sendResponse(res, HttpStatus.OK, 'Noticia cadastrada com sucesso!'))
             .catch(error => console.error.bind(console, `Error ${error}`));
     }
     update(req, res) {
